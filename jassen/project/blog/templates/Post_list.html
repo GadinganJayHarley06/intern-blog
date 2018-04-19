@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
-<title>Post</title>
+<title>Post Detail</title>
  {% block content %} 
   {% for obj in post %}
     <div class="card">
@@ -16,8 +16,14 @@
       <img src="{{obj.banner_photo.url}}">
       <p class="p">{{obj.body}}</p>
       <small>Date Modified: {{obj.date_modified }} </small>
-      <small>{{obj.tags}}</small>
-    </div>
-  {% endfor %}
- {% endblock %}
+      <div class="tags">
+      {% for tag in obj.tags.all %}
+          {% if not forloop.last %}
+              <small>{{tag}},</small>
+          {% else  %}
+              <small>{{tag}}</small>
+          {% endif %}
+      {% endfor %}
+    {% endfor %}
+  {% endblock %}
 </html> 
