@@ -1,0 +1,18 @@
+.nav a{
+  background-color: blue;
+  overflow: hidden;
+  color: black;
+  font-family: serif;
+  font-size: 25px;
+}
+
+h1{
+    color: white;
+    font-style: normal;
+    font-size: 35px;
+}
+
+.dropdownbtn a{
+  font-family: serif;
+  background-color: blue;
+}
